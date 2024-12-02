@@ -4,7 +4,7 @@
 #
 set -e
 
-MANIFEST_NAME="harbor.belong.life/devops/go-swarm-exporter"
+MANIFEST_NAME="go-swarm-exporter"
 if [ -z $BUILD_NUMBER ]; then 
   VERSION=$(cat version.txt)
 else 
