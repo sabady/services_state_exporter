@@ -1,0 +1,19 @@
+services:
+  swarm_exporter:
+    image: swarm_exporter:latest
+    build: .
+    deploy:
+      replicas: 1
+    environment:
+      - EXPORTER_PORT=9180
+    ports:
+      - "9180:9180"
+    networks:
+      - monitoring
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+networks:
+  monitoring:
+    driver: overlay
+
+# vim:set ts=2 sw=2 sts=2 et :
